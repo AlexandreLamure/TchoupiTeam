@@ -4,6 +4,7 @@ Created on Wed Feb 28 21:48:20 2018
 
 @author: César
 """
+import time
 
 class Part:
     
@@ -38,4 +39,11 @@ class Pizza:
         return True
     
     def Save(self):
+        returnString = ""
+        returnString += len(self.listPart) +"\n"
+        for i in self.listPart:
+            returnString += i.x0 + " " + i.y0 + " " + i.x1 + " " + i.y1 + "\n"
+        fichier = open("Pizza_Result"+"//"+"result_"+ str(time.time())+ "_"+"0","w")
+        fichier.write(returnString)
+        fichier.close();
         return None
