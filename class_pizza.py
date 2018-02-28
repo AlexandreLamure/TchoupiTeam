@@ -40,7 +40,7 @@ class Pizza:
     
     def Save(self):
         returnString = ""
-        returnString += len(self.listPart) +"\n"
+        returnString += str(len(self.listPart)) +"\n"
         for i in self.listPart:
             returnString += i.x0 + " " + i.y0 + " " + i.x1 + " " + i.y1 + "\n"
         fichier = open("Pizza_Result"+"//"+"result_"+ str(time.time())+ "_"+"0","w")
