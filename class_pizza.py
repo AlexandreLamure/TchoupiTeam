@@ -42,7 +42,7 @@ class Pizza:
                 return True
         return False
     
-    def compute_score():
+    def compute_score(self):
         score = 0
         for i in self.listPart:
             score += (i.x1 - i.x0 + 1) * (i.y1 - i.y0 + 1)
