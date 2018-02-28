@@ -29,6 +29,13 @@ class Pizza:
             self.listPart.append(newPart)
         return True
     
-    def checkIfThePartIsAlreadyTaken(self,Part):
-        return False
-        
+    def checkIfThePartIsAlreadyTaken(self,partofPizza):
+        for i in self.listPart:
+            if partofPizza.x0 >= i.x0 and partofPizza.x0 <= i.x1 and partofPizza.y0 >=i.y0 and partofPizza.y0 <= i.y1:
+                return False
+            if partofPizza.x1 >= i.x0 and partofPizza.x1 <= i.x1 and partofPizza.y1 >=i.y0 and partofPizza.y1 <= i.y1:
+                return False
+        return True
+    
+    def Save(self):
+        return None
