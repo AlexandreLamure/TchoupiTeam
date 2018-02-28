@@ -60,3 +60,20 @@ class Pizza:
         fichier.write(returnString)
         fichier.close();
         return None
+
+    def howManyTomatosAndMushroomsAreInThisPartOfPizza(self, partofPizza):
+        nbT = 0,
+        nbM = 0,
+        for i in range(partofPizza.x0,partofPizza.x1):
+            for j in range(partofPizza.y0,partofPizza.y1):
+                if self.pizza[i,j] = 'T':
+                    nbT += 1
+                else:
+                    nbM += 1
+        return min(nbT,nbM)
+            
+                    
+                    
+    
+    
+    
