@@ -39,6 +39,12 @@ class Pizza:
                 return False
         return True
     
+    def compute_score():
+        score = 0
+        for i in self.listPart:
+            score += (i.x1 - i.x0 + 1) * (i.y1 - i.y0 + 1)
+        return score
+
     def Save(self):
         returnString = ""
         returnString += str(len(self.listPart)) +"\n"
