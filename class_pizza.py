@@ -22,10 +22,13 @@ class Pizza:
         self.listPart = []
         
     def slicep(self, pizza,x,y,x1,y1):
-        if x1 >= len(pizza) or y >= len(pizza[0]):
+        if x >= len(pizza) or y >= len(pizza[0]):
             return False
         if x < 0 or y < 0:
             return False
+        if x + x1 >= len(pizza) or y + y1 >= len(pizza[0]):
+            return False
+        
         newPart = Part(x,y,x1,y1)
         if not self.checkIfThePartIsAlreadyTaken(newPart):
             self.listPart.append(newPart)
@@ -34,10 +37,10 @@ class Pizza:
     def checkIfThePartIsAlreadyTaken(self,partofPizza):
         for i in self.listPart:
             if partofPizza.x0 >= i.x0 and partofPizza.x0 <= i.x1 and partofPizza.y0 >=i.y0 and partofPizza.y0 <= i.y1:
-                return False
+                return True
             if partofPizza.x1 >= i.x0 and partofPizza.x1 <= i.x1 and partofPizza.y1 >=i.y0 and partofPizza.y1 <= i.y1:
-                return False
-        return True
+                return True
+        return False
     
     def compute_score():
         score = 0
@@ -49,7 +52,7 @@ class Pizza:
         returnString = ""
         returnString += str(len(self.listPart)) +"\n"
         for i in self.listPart:
-            returnString += i.x0 + " " + i.y0 + " " + i.x1 + " " + i.y1 + "\n"
+            returnString += str(i.x0) + " " + str(i.y0) + " " + str(i.x1) + " " + str(i.y1) + "\n"
 
         if not os.path.exists("results"):
             os.makedirs("results")
