@@ -70,7 +70,7 @@ class Pizza:
         nbM = 0,
         for i in range(partofPizza.x0,partofPizza.x1):
             for j in range(partofPizza.y0,partofPizza.y1):
-                if self.pizza[i,j] = 'T':
+                if self.pizza[i,j] == 'T':
                     nbT += 1
                 else:
                     nbM += 1
