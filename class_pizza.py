@@ -5,6 +5,7 @@ Created on Wed Feb 28 21:48:20 2018
 @author: César
 """
 import time
+import os
 
 class Part:
     
@@ -12,7 +13,7 @@ class Part:
         self.x0 = x0
         self.y0 = y0
         self.x1 = x1
-        self.y2 = y1
+        self.y1 = y1
         
 
 class Pizza:
@@ -43,7 +44,10 @@ class Pizza:
         returnString += str(len(self.listPart)) +"\n"
         for i in self.listPart:
             returnString += i.x0 + " " + i.y0 + " " + i.x1 + " " + i.y1 + "\n"
-        fichier = open("Pizza_Result"+"//"+"result_"+ str(time.time())+ "_"+"0","w")
+
+        if not os.path.exists("results"):
+            os.makedirs("results")
+        fichier = open("results/result_"+ str(time.time())+ "_"+str(0)+".txt","w")
         fichier.write(returnString)
         fichier.close();
         return None

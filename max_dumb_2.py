@@ -28,4 +28,4 @@ def max_dumb_2(width, height, minimum, area, pizza):
     for y in range(0, len(pizza)):
         for x in range(0, len(pizza[0])):
             data.slicep(pizza, x, y, sl[0], sl[1])
-    data.save()
+    data.Save()
