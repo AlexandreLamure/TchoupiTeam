@@ -34,6 +34,9 @@ class Pizza:
             return False
         
         newPart = Part(x,y,x1,y1)
+        if self.howManyTomatosAndMushroomsAreInThisPartOfPizza(newPart) < self.mini:
+            return False
+        
         if not self.checkIfThePartIsAlreadyTaken(newPart):
             self.listPart.append(newPart)
         return True
