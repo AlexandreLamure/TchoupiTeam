@@ -6,6 +6,7 @@ Created on Wed Feb 28 21:48:20 2018
 """
 import time
 import os
+import math
 
 class Part:
     
@@ -53,7 +54,7 @@ class Pizza:
     def compute_score(self):
         score = 0
         for i in self.listPart:
-            score += (i.x1 - i.x0 + 1) * (i.y1 - i.y0 + 1)
+            score += (abs(i.x1 - i.x0) + 1) * (abs(i.y1 - i.y0) + 1)
         return score
 
     def Save(self):
@@ -66,7 +67,7 @@ class Pizza:
             os.makedirs("results")
         fichier = open("results/result_"+ str(time.time())+ "_"+str(0)+".txt","w")
         fichier.write(returnString)
-        fichier.close();
+        fichier.close()
         return None
 
     def partOfPizza(self, partofPizza):
