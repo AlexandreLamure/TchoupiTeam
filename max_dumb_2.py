@@ -1,31 +1,37 @@
 from class_pizza import *
-data = Pizza()
+from parsing import *
 
-def get_tuples(minimum, area):
+w, h, mini, area, pizza = start()
+data = Pizza(w, h, mini, area, pizza)
+
+def get_tuples():
 
     arr = []
-    for i in range(1, int(area / 2) + 1):
-        for j in range(i, int(area / 2) + 1):
-            if i * j >= minimum * 2 and i * j <= area:
+    for i in range(1, int(data.area / 2) + 1):
+        for j in range(i, int(data.area / 2) + 1):
+            if i * j >= data.mini * 2 and i * j <= data.area:
                 arr.append((i, j))
     return arr         
 
-def get_best(arr, width, height):
-    score = width % arr[0][0] == 0 + width % arr[0][1] == 0
+def get_best(arr):
+    score = data.w % arr[0][0] == 0 + data.h % arr[0][1] == 0
     best = arr[0]
     for i in arr:
-        s = width % i[0] == 0 + width % i[1] == 0
+        s = data.w % i[0] == 0 + data.h % i[1] == 0
         if (s > score):
             best = i
             score = s
     return best
 
 
-def max_dumb_2(width, height, minimum, area, pizza):
+def max_dumb_2():
 
-    arr = get_tuples(minimum, area)
-    sl = get_best(arr, width, height)
-    for y in range(0, len(pizza)):
-        for x in range(0, len(pizza[0])):
-            data.slicep(pizza, x, y, sl[0], sl[1])
+    arr = get_tuples()
+    sl = get_best(arr)
+    for y in range(0, len(data.pizza)):
+        for x in range(0, len(data.pizza[0])):
+            print(x, y, x + sl[0], y + sl[1])
+            data.slicep(data.pizza, x, y, x + sl[0], y + sl[1])
     data.Save()
+
+max_dumb_2()

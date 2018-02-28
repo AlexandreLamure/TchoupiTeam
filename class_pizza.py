@@ -26,22 +26,23 @@ class Pizza:
         self.pizza = pizza
 
     def slicep(self, pizza,x,y,x1,y1):
-        if x >= len(pizza) or y >= len(pizza[0]):
+        if x >= len(pizza[0]) or y >= len(pizza):
             return False
         if x < 0 or y < 0:
             return False
-        if x + x1 >= len(pizza) or y + y1 >= len(pizza[0]):
+        if x1 >= len(pizza[0]) or y1 >= len(pizza):
             return False
         
         newPart = Part(x,y,x1,y1)
-        if self.howManyTomatosAndMushroomsAreInThisPartOfPizza(newPart) < self.mini:
+        nbt, nbm = self.partOfPizza(newPart)
+        if nbt < self.mini or nbm < self.mini:
             return False
         
-        if not self.checkIfThePartIsAlreadyTaken(newPart):
+        if not self.checkTaken(newPart):
             self.listPart.append(newPart)
         return True
     
-    def checkIfThePartIsAlreadyTaken(self,partofPizza):
+    def checkTaken(self,partofPizza):
         for i in self.listPart:
             if partofPizza.x0 >= i.x0 and partofPizza.x0 <= i.x1 and partofPizza.y0 >=i.y0 and partofPizza.y0 <= i.y1:
                 return True
@@ -68,16 +69,16 @@ class Pizza:
         fichier.close();
         return None
 
-    def howManyTomatosAndMushroomsAreInThisPartOfPizza(self, partofPizza):
-        nbT = 0,
-        nbM = 0,
-        for i in range(partofPizza.x0,partofPizza.x1):
-            for j in range(partofPizza.y0,partofPizza.y1):
-                if self.pizza[i,j] == 'T':
+    def partOfPizza(self, partofPizza):
+        nbT = 0
+        nbM = 0
+        for i in range(partofPizza.x0, partofPizza.x1 + 1):
+            for j in range(partofPizza.y0, partofPizza.y1 + 1):
+                if self.pizza[j][i] == 'T':
                     nbT += 1
                 else:
                     nbM += 1
-        return min(nbT,nbM)
+        return nbT, nbM
             
                     
                     
