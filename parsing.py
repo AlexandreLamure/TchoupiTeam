@@ -32,4 +32,4 @@ def start():
     return int(words[0]), int(words[1]), int(words[2]), int(words[3]), pizza
 
 
-width, height, minimum, area, pizza = start()
+
