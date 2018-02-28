@@ -9,18 +9,22 @@ import os
 
 class Part:
     
-    def __init__(self,x0,y0,x1,y1):
+    def __init__(self, x0, y0, x1, y1):
         self.x0 = x0
         self.y0 = y0
         self.x1 = x1
         self.y1 = y1
-        
 
 class Pizza:
     
-    def __init__(self):
+    def __init__(self, w, h, mini, area, pizza):
         self.listPart = []
-        
+        self.w = w
+        self.h = h
+        self.min = mini
+        self.area = area
+        self.pizza = pizza
+
     def slicep(self, pizza,x,y,x1,y1):
         if x >= len(pizza) or y >= len(pizza[0]):
             return False
