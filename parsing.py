@@ -6,10 +6,10 @@
 import sys
 
 def getfile():
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 2:
         sys.exit()
     filein = sys.argv[1]
-    fileout = sys.argv[2]
+    fileout = "a.out"
     tab = []
     file  = open(filein, "r")
     i = 0

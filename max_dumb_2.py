@@ -1,5 +1,5 @@
 from class_pizza import *
-
+data = Pizza()
 
 def get_tuples(area):
 
@@ -18,5 +18,5 @@ def max_dumb_2(width, height, minimum, area, pizza):
         print(i)
     for y in range(0, len(pizza)):
         for x in range(0, len(pizza[0])):
-            pizza.slicep(pizza, x, y, area, 1)
-    pizza.save()
+            data.slicep(pizza, x, y, area, 1)
+    data.save()
