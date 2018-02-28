@@ -21,7 +21,7 @@ class Pizza:
         self.listPart = []
         self.w = w
         self.h = h
-        self.min = mini
+        self.mini = mini
         self.area = area
         self.pizza = pizza
 
