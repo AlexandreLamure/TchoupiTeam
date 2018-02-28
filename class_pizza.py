@@ -24,7 +24,7 @@ class Pizza:
             return False
         if x < 0 or y < 0:
             return False
-        newPart = Part.part(x,y,x1,y1)
+        newPart = Part(x,y,x1,y1)
         if not self.checkIfThePartIsAlreadyTaken(newPart):
             self.listPart.append(newPart)
         return True
