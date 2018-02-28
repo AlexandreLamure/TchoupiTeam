@@ -10,4 +10,4 @@ def launch_test():
   n = int(sys.argv[1])
   for i in range(0, n):
     r, c, l, h, tab = new_pizza()
-    data = dumb_1(r, c, l , h,)
+    dumb_1(r, c, l , h,)
