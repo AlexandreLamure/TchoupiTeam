@@ -59,7 +59,7 @@ class Pizza:
         returnString = ""
         returnString += str(len(self.listPart)) +"\n"
         for i in self.listPart:
-            returnString += str(i.x0) + " " + str(i.y0) + " " + str(i.x1) + " " + str(i.y1) + "\n"
+            returnString += str(i.x0) + " " + str(i.x1) + " " + str(i.y0) + " " + str(i.y1) + "\n"
 
         if not os.path.exists("results"):
             os.makedirs("results")
