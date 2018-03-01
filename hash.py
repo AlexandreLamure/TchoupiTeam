@@ -1,4 +1,6 @@
 from parse import *
+from class_ride import *
+from class_car import *
 import time
 import os
 param, courses = getfile()

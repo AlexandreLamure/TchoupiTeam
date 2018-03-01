@@ -15,11 +15,12 @@ class Ride:
         self.y1_ = y1
         self.early = e
         self.last = l
+        self.finished = False
         self.distance = self.distancePoints(x0, y0, x1, y1)
 
     
     def distancePoint(x0, y0, x1, y1):
-        return  sqrt((y1 - y0)**2) + sqrt((x1 - x0)**2)
+        return  abs(y1 - y0) + abs(x1 - x0)
     
     def distanceToStart(self, car):
         return self.distancePoints(self.x0_, self.y0_, car.x_, car.y_)
