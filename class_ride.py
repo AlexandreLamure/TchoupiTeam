@@ -29,5 +29,17 @@ class Ride:
         return self.distance + self.distanceToStart(car)
     
     
+    def checkRideValid(self, tour):
+        if self.last < tour:
+            self.finished = True
+            return False
+        else:
+            return True
     
+    def checkRide(self, tour, car):
+        if self.last < self.distanceToEnd(car) + tour:
+            return False
+        else:
+            return True
+        
         
