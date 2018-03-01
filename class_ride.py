@@ -25,5 +25,9 @@ class Ride:
     def distanceToStart(self, car):
         return self.distancePoints(self.x0_, self.y0_, car.x_, car.y_)
     
+    def distanceToEnd(self, car):
+        return self.distance + self.distanceToStart(car)
+    
+    
     
         
