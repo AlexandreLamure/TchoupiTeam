@@ -4,6 +4,7 @@ from class_car import *
 import time
 import os
 from class_car import *
+from dispatch import *
 
 param, courses = getfile()
 r, c, f, n, b, t = param
@@ -37,11 +38,10 @@ while (has_courses(rides)):
     car = get_first_car(cars)
     ride = best_ride(car, rides)
     car.take_course(ride, rides)
-    
 
 resp = ''
 for i in range(0, f):
-    cars[i].rideToString()
+    resp += cars[i].rideToString()
     resp += '\n'
     
 if not os.path.exists("results"):

@@ -18,16 +18,17 @@ class Car:
         #self.ride_ = None
         self.step = 0
     
-    def rideTostring(self):
+    def rideToString(self):
         chaine = ""
         for i in self.myCourse_:
             chaine += " " + str(i)
-            return str(len(self.myCourse_)) + chaine 
+        return str(len(self.myCourse_)) + chaine 
         
     def take_course(self, index, tabRides):
         self.x_ = tabRides[index].x1_
         self.y_ = tabRides[index].y1_
         self.myCourse_.append(index)
+        tabRides[index].finished = True
         self.step += tabRides[index].distanceToEnd(self)
         
         
