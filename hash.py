@@ -4,6 +4,7 @@ from class_car import *
 import time
 import os
 from class_car import *
+from math import abs
 
 param, courses = getfile()
 r, c, f, n, b, t = param
