@@ -13,6 +13,7 @@ class Car:
         self.y_ = 0
         self.myCourse_ = []
         self.free_ = True
+        self.distance_ = 0
     
     def rideTostring(self):
         chaine = ""
@@ -20,4 +21,17 @@ class Car:
             chaine += " " + str(i)
             return str(len(self.myCourse_)) + chaine 
         
-    
+    def move(self):
+        if self.distance_ == 0:
+            return False
+        else:
+            self.distance_ -= 1
+            if self.distance_ == 0:
+                if self.x_ == self.myCourse_[len(self.myCourse_)-1].x0 and self.y_ == self.myCourse_[len(self.myCourse_)-1].y0:
+                    self.x_ = self.myCourse_[len(self.myCourse_)-1].x0
+                    self.y_ = self.myCourse_[len(self.myCourse_)-1].y0
+                elif self.x_ == self.myCourse_[len(self.myCourse_)-1].x0 and self.y_ == self.myCourse_[len(self.myCourse_)-1].y0:
+                    self.x_ = self.myCourse_[len(self.myCourse_)-1].x1
+                    self.y_ = self.myCourse_[len(self.myCourse_)-1].y1
+                    self.free_ = True
+                return True
