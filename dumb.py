@@ -5,10 +5,12 @@ param, courses = getfile()
 
 r, c, f, n, b, t = param
 
+def dst(x0, y0, x1, y1):
+    return  abs(y1 - y0) + abs(x1 - x0)
+    
 cours = []
 x = 0
 for i in courses:
-    
     cours.append((x, i[4]))
     x += 1
 cours = sorted(cours, key=lambda x: x[1])
@@ -23,7 +25,7 @@ for i in range(f):
 
 car = 0
 index = 0
-while (index < n):
+while (index < len(cours)):
     if (car >= f):
         car = 0
     cars[car].append(cours[index][0])
