@@ -22,8 +22,8 @@ class Ride:
         distance = None
         index = None
         for i in range(0, len(rides)):
-            test = self.distancePoint(self.x1_, self.y1_, rides[i].x0_, rides[i].y0_)    
-            if (distance == None or test < distance) and self.distanceToEnd(car) + test + turn == rides[i].early:
+            test = self.distancePoint(self.x1_, self.y1_, rides[i].x0_, rides[i].y0_)
+            if (distance == None or test < distance) and self.distanceToEnd(car) + test + turn <= rides[i].early:
                 distance = self.distancePoint(self.x1_, self.y1_, rides[i].x0_, rides[i].y0_)
                 index = i
         return rides[index]
