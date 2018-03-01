@@ -16,6 +16,7 @@ class Car:
         #self.distance_ = 0
         #self.waiting_ = True
         #self.ride_ = None
+        self.step = 0
     
     def rideTostring(self):
         chaine = ""
@@ -23,6 +24,16 @@ class Car:
             chaine += " " + str(i)
             return str(len(self.myCourse_)) + chaine 
         
+    def take_course(self, index, tabRides):
+        self.x_ = tabRides[index].x1_
+        self.y_ = tabRides[index].y1_
+        self.myCourse_.append(index)
+        self.step = tabRides[index].distanceToEnd(self)
+        
+        
+        
+        
+    
    """
    def move(self, tour):
         if self.distance_ == 0:
