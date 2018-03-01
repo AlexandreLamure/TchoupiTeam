@@ -14,6 +14,7 @@ class Car:
         self.myCourse_ = []
         self.free_ = True
         self.distance_ = 0
+        self.ride = None
     
     def rideTostring(self):
         chaine = ""
