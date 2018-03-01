@@ -8,9 +8,9 @@ Created on Thu Mar  1 19:04:25 2018
 
 
 class Car:
-    def __init__(self,x,y):
-        self.x_ = x
-        self.y_ = y
+    def __init__(self):
+        self.x_ = 0
+        self.y_ = 0
         self.myCourse_ = []
         self.free_ = True
     
