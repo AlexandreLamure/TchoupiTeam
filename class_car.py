@@ -17,6 +17,7 @@ class Car:
         #self.waiting_ = True
         #self.ride_ = None
         self.step = 0
+        self.nextRide = None
     
     def rideToString(self):
         chaine = ""

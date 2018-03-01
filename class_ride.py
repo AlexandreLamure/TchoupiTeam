@@ -17,7 +17,7 @@ class Ride:
         self.last = l
         self.index = index
         self.distance = self.distancePoint(x0, y0, x1, y1)
-        self.nextRide = None
+        
     
     def search(self, rides, car, turn):
         distance = None
@@ -27,7 +27,7 @@ class Ride:
             if (distance == None or test < distance) and self.distanceToEnd(car) + test + turn <= rides[i].early:
                 distance = self.distancePoint(self.x1_, self.y1_, rides[i].x0_, rides[i].y0_)
                 index = i
-        self.nextRide = rides[index]
+        car.nextRide = rides[index]
         rides[index].early = 0
         return rides[index]
             
