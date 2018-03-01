@@ -28,7 +28,7 @@ class Car:
         self.x_ = tabRides[index].x1_
         self.y_ = tabRides[index].y1_
         self.myCourse_.append(index)
-        self.step = tabRides[index].distanceToEnd(self)
+        self.step += tabRides[index].distanceToEnd(self)
         
         
         
