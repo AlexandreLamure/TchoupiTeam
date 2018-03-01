@@ -15,6 +15,7 @@ class Ride:
         self.y1_ = y1
         self.early = e
         self.last = l
+        self.finished = False
         self.distance = self.distancePoints(x0, y0, x1, y1)
 
     
