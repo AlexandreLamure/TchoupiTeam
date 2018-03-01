@@ -1,5 +1,6 @@
 import sys
 import os
+
 def getfile():
     if len(sys.argv) != 2:
         sys.exit()
