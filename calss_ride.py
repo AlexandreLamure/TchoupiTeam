@@ -13,4 +13,14 @@ class Ride:
         self.y0_ = y0
         self.x1_ = x1
         self.y1_ = y1
-        self.distance = sqrt((y1 - y0)**2 + (x1 - x0)**2)
+        self.distance = self.distancePoints(x0, y0, x1, y1)
+
+    
+    def distancePoint(x0, y0, x1, y1):
+        return  sqrt((y1 - y0)**2) + sqrt((x1 - x0)**2)
+    
+    def distanceToStart(self, car):
+        return self.distancePoints(self.x0_, self.y0_, car.x_, car.y_)
+    
+    
+        
