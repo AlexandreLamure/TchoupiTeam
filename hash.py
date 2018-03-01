@@ -27,7 +27,7 @@ while (len(rides) != 0):
     if (cr >= len(cars)):
         cr = 0
     car = cars[cr]
-    ride = best_ride(car, rides)
+    ride = best_ride(car, rides, cr)
     car.take_course(ride, rides)
     cr += 1
 
