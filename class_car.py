@@ -14,7 +14,7 @@ class Car:
         self.myCourse_ = []
         self.free_ = True
         self.distance_ = 0
-        self.ride = None
+        self.ride_ = None
     
     def rideTostring(self):
         chaine = ""
@@ -28,11 +28,12 @@ class Car:
         else:
             self.distance_ -= 1
             if self.distance_ == 0:
-                if self.x_ == self.myCourse_[len(self.myCourse_)-1].x0 and self.y_ == self.myCourse_[len(self.myCourse_)-1].y0:
-                    self.x_ = self.myCourse_[len(self.myCourse_)-1].x0
-                    self.y_ = self.myCourse_[len(self.myCourse_)-1].y0
-                elif self.x_ == self.myCourse_[len(self.myCourse_)-1].x0 and self.y_ == self.myCourse_[len(self.myCourse_)-1].y0:
-                    self.x_ = self.myCourse_[len(self.myCourse_)-1].x1
-                    self.y_ = self.myCourse_[len(self.myCourse_)-1].y1
+                if self.x_ == self.ride_.x0 and self.y_ == self.ride_.y0:
+                    self.x_ = self.ride_.x0
+                    self.y_ = self.ride_.y0
+                elif self.x_ == self.ride_.x0 and self.y_ == self.ride_.y0:
+                    self.x_ = self.ride_.x1
+                    self.y_ = self.ride_.y1
                     self.free_ = True
+                    self.ride_ = None
                 return True
