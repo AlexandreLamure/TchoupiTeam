@@ -10,8 +10,10 @@ param, courses = getfile()
 r, c, f, n, b, t = param
 
 rides = []
+x = 0
 for i in courses:
-    rides.append(Ride(i[0],i[1],i[2],i[3],i[4],i[5]))
+    rides.append(Ride(i[0],i[1],i[2],i[3],i[4],i[5], x))
+    x += 1
 
 def dst(x0, y0, x1, y1):
     return  abs(y1 - y0) + abs(x1 - x0)
@@ -20,24 +22,14 @@ cars = []
 for i in range(f):
     cars.append(Car())
 
-def get_first_car(cars):
-    car = cars[0]
-    for i in cars:
-        if car.step > i.step:
-            car = i
-    return car
-
-def has_courses(rides):
-    i = 0
-    l = len(rides)
-    while (i < l and rides[i].finished == True):
-        i += 1
-    return i != l
-    
-while (has_courses(rides)):
-    car = get_first_car(cars)
+cr = 0
+while (len(rides) != 0):
+    if (cr >= len(cars)):
+        cr = 0
+    car = cars[cr]
     ride = best_ride(car, rides)
     car.take_course(ride, rides)
+    cr += 1
 
 resp = ''
 for i in range(0, f):

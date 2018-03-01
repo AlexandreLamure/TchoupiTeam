@@ -8,18 +8,16 @@ Created on Thu Mar  1 19:12:48 2018
 from math import *
 
 class Ride:
-    def __init__(self, x0, y0, x1, y1, e, l):
+    def __init__(self, x0, y0, x1, y1, e, l, index):
         self.x0_ = x0
         self.y0_ = y0
         self.x1_ = x1
         self.y1_ = y1
         self.early = e
         self.last = l
-        self.finished = False
+        self.index = index
         self.distance = self.distancePoint(x0, y0, x1, y1)
 
-    def printRide(self):
-        print(str(self.x0_) + ' ' + str(self.y0_) + ' ' +str(self.x1_) + ' ' +str(self.y1_) + ' ' +str(self.early) + ' ' +str(self.last) + ' ' +str(self.finished))
     def distancePoint(self, x0, y0, x1, y1):
         return  abs(y1 - y0) + abs(x1 - x0)
     
