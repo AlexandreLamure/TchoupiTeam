@@ -34,7 +34,7 @@ class Car:
         
         
     
-   """
+"""
    def move(self, tour):
         if self.distance_ == 0:
             return self.timeTogo(self,tour)
@@ -59,6 +59,6 @@ class Car:
             return True
         else:
             return False
-    """
+"""
     
     

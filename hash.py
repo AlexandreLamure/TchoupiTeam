@@ -4,7 +4,6 @@ from class_car import *
 import time
 import os
 from class_car import *
-from math import abs
 
 param, courses = getfile()
 r, c, f, n, b, t = param
@@ -18,7 +17,7 @@ def dst(x0, y0, x1, y1):
 
 cars = []
 for i in range(f):
-    cars.append(car())
+    cars.append(Car())
 
 def get_first_car(cars):
     car = cars[0]
